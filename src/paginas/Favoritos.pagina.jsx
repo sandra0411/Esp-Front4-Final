@@ -31,7 +31,9 @@ const PaginaFavoritos = () => {
             return (
                 <TarjetaPersonaje   name={favorito.name}
                                     image={favorito.image}
-                                    id={favorito.id}/>
+                                    id={favorito.id}
+                                    key={favorito.id}/>
+                                    
                                     
             )
         })}

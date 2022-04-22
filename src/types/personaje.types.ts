@@ -13,5 +13,6 @@ image:string;
 episode:string[];
 url?:string;
 created?:string;
+key?: number; 
 
 }
