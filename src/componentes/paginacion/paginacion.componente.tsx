@@ -47,9 +47,6 @@ const nextPage = ()=>dispatch(buscarPersonajesThunk(nextContent));
 
 
 
-// https://rickandmortyapi.com/api/character/?page=2
-
-
     return <div className="paginacion">
         <button disabled={prev=== null? true: false} onClick= {prevPage} className={"primary"}>Anterior</button>
         <button disabled={next=== null? true: false} onClick={nextPage} className={"primary"}>Siguiente</button>

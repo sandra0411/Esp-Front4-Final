@@ -29,7 +29,7 @@ const detalleReducer: Reducer<DetalleState, DetallesAction> = (
 ): DetalleState => {
     switch (action.type) {
         case "VER_DETALLE":
-            console.log({ personaje: action.personaje });
+         
 
             return {
                 ...state,
@@ -47,7 +47,7 @@ const detalleReducer: Reducer<DetalleState, DetallesAction> = (
                 return {
                     ...state,
                     status: "COMPLETADO_CON_ERROR",
-                    episodios: [], //opcional
+                    episodios: [], 
                     error: action.error
                 }
         default:

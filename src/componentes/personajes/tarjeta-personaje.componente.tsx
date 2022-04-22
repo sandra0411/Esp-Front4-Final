@@ -7,8 +7,7 @@ import {agregarFavorito, eliminarFavorito} from "../../actions/personajesFavorit
 import { buscarEpisodiosThunk, verDetalle } from '../../actions/detalleActions';
 import Personaje from '../../types/personaje.types';
 import { useNavigate } from "react-router-dom";
-import { useEffect } from 'react';
-import { strictEqual } from 'assert';
+
 
 
 
@@ -31,11 +30,6 @@ const TarjetaPersonaje = ({image, name, id, location, gender, episode }:Personaj
     const favoritos= useSelector((state)=> state.personajesFavoritos.favoritos);
     let esFavorito = favoritos.some((favorito)=> favorito.id === id);
 
-    //const detallePersonaje= useSelector((state)=> state.detalle.detallePersonaje);
-    //const {episode} = useSelector(state=> state.detalle.detallePersonaje)
-
-    
-    
 
 
     /**
@@ -56,17 +50,14 @@ const TarjetaPersonaje = ({image, name, id, location, gender, episode }:Personaj
     const handleClick_2= ()=>{
         
         dispatch(verDetalle({image, name, id, location, gender, episode}));
-        console.log({episode});
+     
         
         dispatch(buscarEpisodiosThunk({episode}))
         navigate("detalle");
     }
 
 
-   /*  useEffect(() => {
-        console.log(detallePersonaje, 'detallePersonaje');
-         
-    }, [detallePersonaje]) */
+
 
     return <div className="tarjeta-personaje" key={"personaje_"+ id}>
         

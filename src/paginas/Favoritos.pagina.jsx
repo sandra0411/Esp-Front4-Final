@@ -3,14 +3,8 @@ import { useDispatch } from "react-redux";
 import { LimpiarFavoritos } from "../actions/personajesFavoritosActions";
 import TarjetaPersonaje from "../componentes/personajes/tarjeta-personaje.componente";
 import { useSelector } from "../componentes/personajes/grilla-personajes.componente";
-/**
- * Esta es la pagina de favoritos. Aquí se deberan ver todos los personajes marcados como favoritos
- * 
- * Uso: 
- * ``` <PaginaFavoritos /> ```
- * 
- * @returns la pagina de favoritos
- */
+
+
 const PaginaFavoritos = () => {
 
     const favoritos = useSelector((state)=> state.personajesFavoritos.favoritos);
@@ -38,6 +32,7 @@ const PaginaFavoritos = () => {
                 <TarjetaPersonaje   name={favorito.name}
                                     image={favorito.image}
                                     id={favorito.id}/>
+                                    
             )
         })}
 

@@ -48,7 +48,7 @@ const personajesReducer: Reducer<PersonajesState, PersonajesAction> =
                 return {
                     ...state,
                     status: "COMPLETADO_CON_ERROR",
-                    personajes: [], //opcional
+                    personajes: [], 
                     error: action.error
                 }
             case "LIMPIAR_FILTRO":

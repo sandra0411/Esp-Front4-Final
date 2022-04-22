@@ -1,18 +1,13 @@
 import Episode from "../types/episode.types"
 
-//import { useSelector } from "../componentes/personajes/grilla-personajes.componente";
+interface EpisodioProp {
+    episode: Episode[]
+}
 
-//const {episode}= useSelector((state)=> state.detalle.detallePersonaje);// string[]
-
-
-export const buscarEpisodiosAPI = async (episode: string[]): Promise<Episode[]> =>{
-    const arrayEpisodios: number[] = [];
-
-    episode?.map((episodio)=>arrayEpisodios.push(parseInt((episodio.split("/"))[5])))
-    
-    
-    console.log('arrayEpisodios:', arrayEpisodios);
-    
+export const buscarEpisodiosAPI = async ({episode}: EpisodioProp ): Promise<Episode[]> =>{
+     
+const arrayEpisodios = episode.map((episodio: any)=>(parseInt((episodio.split("/"))[5])))
+        
     
     return fetch(`https://rickandmortyapi.com/api/episode/${arrayEpisodios}`)
     .then(data => data.json())

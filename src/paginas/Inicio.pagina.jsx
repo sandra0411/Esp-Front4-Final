@@ -5,14 +5,7 @@ import { useDispatch } from "react-redux";
 import { limpiarFiltro, buscarPersonajesThunk } from "../actions/personajesActions";
 
 
-/**
- * Esta es la pagina principal. Aquí se debera ver el panel de filtros junto con la grilla de personajes.
- * 
- * Uso: 
- * ``` <PaginaInicio /> ```
- * 
- * @returns la pagina de inicio
- */
+
 const PaginaInicio = () => {
 
     const dispatch = useDispatch();

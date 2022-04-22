@@ -8,9 +8,9 @@ import './tarjeta-episodio.css';
  * 
  * @returns un JSX element 
  */
-const TarjetaEpisodio = ({name, air_date, episode}:any): JSX.Element  => {
+const TarjetaEpisodio = ({name, air_date, episode, id}:any): JSX.Element  => {
 
-    return <div className="tarjeta-episodio">
+    return <div className="tarjeta-episodio" key= {'episodio_'+ id}>
             <h4>{name}</h4>
             <div>
                 <span>{episode}</span>

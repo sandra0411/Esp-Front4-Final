@@ -6,19 +6,6 @@ import { useSelector } from "../componentes/personajes/grilla-personajes.compone
 import { useEffect } from "react";
 
 
-/**
- * Esta es la pagina de detalle. Aqui se puede mostrar la vista sobre el personaje seleccionado junto con la lista de episodios en los que aparece
- * 
- * EL TRABAJO SOBRE ESTE ARCHIVO ES OPCIONAL Y NO ES REQUISITO DE APROBACION
- * 
- * 
- * 
- * Uso: 
- * ``` <PaginaDetalle /> ```
- * 
- * @returns la pagina de detalle
- */
-
 
 const PaginaDetalle = () => {
 
@@ -26,7 +13,7 @@ const PaginaDetalle = () => {
 
     const detallePersonaje = useSelector((state) => state.detalle.detallePersonaje);
     const episodios = useSelector(state => state.detalle.episodios);
-    console.log(episodios);//no esta llegando nada 
+   
 
     if (detallePersonaje.id === 0) return <div className='container'>
         <h3 className='message'>No seleccionaste ningún Personaje</h3> </div>
@@ -55,6 +42,7 @@ const PaginaDetalle = () => {
                         name={episodio.name}
                         air_date={episodio.air_date}
                         episode={episodio.episode}
+                        key= {episodio.id}
                     />
                 )
             })}
